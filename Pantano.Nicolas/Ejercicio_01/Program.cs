@@ -29,7 +29,6 @@ namespace Ejercicio_01
                     max = numero;
                     min = numero;
                     flag = false;
-
                 }
 
                 if (numero>max)
@@ -38,15 +37,11 @@ namespace Ejercicio_01
                 }
                 if (numero < min)
                 {
-                    min = numero;
-                    
+                    min = numero;                   
                 }
-
-                
+               
             }
             promedio = acumulador / 5;
-
-
             Console.WriteLine("MAX: {0}, MIN {1}, Promedio: {2}",max,min,promedio);
             Console.ReadKey();
         }

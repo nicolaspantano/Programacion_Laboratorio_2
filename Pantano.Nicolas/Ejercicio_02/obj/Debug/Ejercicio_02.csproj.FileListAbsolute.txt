@@ -1,0 +1,6 @@
+C:\Users\Compumar\Desktop\Programacion_Laboratorio_2\Pantano.Nicolas\Ejercicio_02\bin\Debug\Ejercicio_02.exe.config
+C:\Users\Compumar\Desktop\Programacion_Laboratorio_2\Pantano.Nicolas\Ejercicio_02\bin\Debug\Ejercicio_02.exe
+C:\Users\Compumar\Desktop\Programacion_Laboratorio_2\Pantano.Nicolas\Ejercicio_02\bin\Debug\Ejercicio_02.pdb
+C:\Users\Compumar\Desktop\Programacion_Laboratorio_2\Pantano.Nicolas\Ejercicio_02\obj\Debug\Ejercicio_02.csproj.CoreCompileInputs.cache
+C:\Users\Compumar\Desktop\Programacion_Laboratorio_2\Pantano.Nicolas\Ejercicio_02\obj\Debug\Ejercicio_02.exe
+C:\Users\Compumar\Desktop\Programacion_Laboratorio_2\Pantano.Nicolas\Ejercicio_02\obj\Debug\Ejercicio_02.pdb
