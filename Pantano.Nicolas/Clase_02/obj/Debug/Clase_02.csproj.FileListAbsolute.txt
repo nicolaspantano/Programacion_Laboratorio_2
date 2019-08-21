@@ -105,3 +105,5 @@ C:\Users\alumno\Desktop\Programacion_Laboratorio_2\Pantano.Nicolas\Clase_02\bin\
 C:\Users\alumno\Desktop\Programacion_Laboratorio_2\Pantano.Nicolas\Clase_02\obj\Debug\Clase_02.csprojAssemblyReference.cache
 C:\Users\alumno\Desktop\Programacion_Laboratorio_2\Pantano.Nicolas\Clase_02\obj\Debug\Clase_02.exe.config
 C:\Users\alumno\Desktop\Programacion_Laboratorio_2\Pantano.Nicolas\Clase_02\obj\Debug\Clase_02.csproj.CopyComplete
+C:\Users\alumno\Desktop\Programacion_Laboratorio_2\Pantano.Nicolas\Clase_02\bin\Debug\Clase_02.Entidades.dll
+C:\Users\alumno\Desktop\Programacion_Laboratorio_2\Pantano.Nicolas\Clase_02\bin\Debug\Clase_02.Entidades.pdb
