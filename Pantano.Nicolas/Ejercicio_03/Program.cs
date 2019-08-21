@@ -11,7 +11,7 @@ namespace Ejercicio_03
         static void Main(string[] args)
         {
             int numero;
-            bool flag=true;
+            
             do
             {
                 Console.Write("Ingrese un numero mayor a 0: ");
@@ -32,9 +32,17 @@ namespace Ejercicio_03
                         
                 }
             }*/
-            for(int i=2;i<numero;i++)
+            for(int i=2;i<numero-1;i++)
             {
-
+                for(int j=2;j<i;j++)
+                {
+                    if(i%j==0)
+                    {
+                        Console.WriteLine(i);
+                        break;
+                    }
+                }
+                
 
             }
            
