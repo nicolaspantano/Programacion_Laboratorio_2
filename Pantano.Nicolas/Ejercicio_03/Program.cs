@@ -11,39 +11,33 @@ namespace Ejercicio_03
         static void Main(string[] args)
         {
             int numero;
-            
+            bool flag = true;
+            int i;
+
             do
             {
                 Console.Write("Ingrese un numero mayor a 0: ");
                 numero = int.Parse(Console.ReadLine());
 
-            } while (numero<=0);
+            } while (numero <= 0);
 
-            /*Console.Write("Los numeros hasta el {0} son: ",numero);
-            for(int i=1;i<numero;i++)
+            for (int j = 3; j < numero; j++)
             {
-                for(int j=2;j<i;j++)
+                for ( i = 2; i < j; i++)
                 {
-                    if((i%j)!=0)
+                    if (j % i == 0)
                     {
-                        Console.WriteLine(i);
+                        flag = false;
                         break;
                     }
-                        
-                }
-            }*/
-            for(int i=2;i<numero-1;i++)
-            {
-                for(int j=2;j<i;j++)
-                {
-                    if(i%j==0)
-                    {
-                        Console.WriteLine(i);
-                        break;
-                    }
-                }
-                
 
+                }
+                if (flag == true)
+                {
+                    Console.WriteLine(i);
+                }
+                flag = true;
+          
             }
            
             Console.ReadKey();
