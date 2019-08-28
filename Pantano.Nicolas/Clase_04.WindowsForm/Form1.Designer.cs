@@ -36,6 +36,9 @@
             this.label3 = new System.Windows.Forms.Label();
             this.btnCrear = new System.Windows.Forms.Button();
             this.lstListado = new System.Windows.Forms.ListBox();
+            this.btnNegro = new System.Windows.Forms.Button();
+            this.btnAzul = new System.Windows.Forms.Button();
+            this.btnRojo = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // txtEntero
@@ -104,11 +107,44 @@
             this.lstListado.Size = new System.Drawing.Size(250, 95);
             this.lstListado.TabIndex = 9;
             // 
+            // btnNegro
+            // 
+            this.btnNegro.Location = new System.Drawing.Point(156, 295);
+            this.btnNegro.Name = "btnNegro";
+            this.btnNegro.Size = new System.Drawing.Size(48, 27);
+            this.btnNegro.TabIndex = 11;
+            this.btnNegro.Text = "Negro";
+            this.btnNegro.UseVisualStyleBackColor = true;
+            this.btnNegro.Click += new System.EventHandler(this.btnNegro_Click);
+            // 
+            // btnAzul
+            // 
+            this.btnAzul.Location = new System.Drawing.Point(254, 295);
+            this.btnAzul.Name = "btnAzul";
+            this.btnAzul.Size = new System.Drawing.Size(48, 27);
+            this.btnAzul.TabIndex = 12;
+            this.btnAzul.Text = "Azul";
+            this.btnAzul.UseVisualStyleBackColor = true;
+            this.btnAzul.Click += new System.EventHandler(this.btnAzul_Click);
+            // 
+            // btnRojo
+            // 
+            this.btnRojo.Location = new System.Drawing.Point(52, 295);
+            this.btnRojo.Name = "btnRojo";
+            this.btnRojo.Size = new System.Drawing.Size(48, 27);
+            this.btnRojo.TabIndex = 13;
+            this.btnRojo.Text = "Rojo";
+            this.btnRojo.UseVisualStyleBackColor = true;
+            this.btnRojo.Click += new System.EventHandler(this.btnRojo_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(330, 301);
+            this.ClientSize = new System.Drawing.Size(330, 339);
+            this.Controls.Add(this.btnRojo);
+            this.Controls.Add(this.btnAzul);
+            this.Controls.Add(this.btnNegro);
             this.Controls.Add(this.lstListado);
             this.Controls.Add(this.btnCrear);
             this.Controls.Add(this.label3);
@@ -134,6 +170,9 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnCrear;
         private System.Windows.Forms.ListBox lstListado;
+        private System.Windows.Forms.Button btnNegro;
+        private System.Windows.Forms.Button btnAzul;
+        private System.Windows.Forms.Button btnRojo;
     }
 }
 
