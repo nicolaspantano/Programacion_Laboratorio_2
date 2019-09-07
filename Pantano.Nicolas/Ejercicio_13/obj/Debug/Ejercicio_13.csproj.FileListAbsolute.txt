@@ -1,0 +1,7 @@
+C:\Users\Compumar\Desktop\Programacion_Laboratorio_2\Pantano.Nicolas\Ejercicio_13\bin\Debug\Ejercicio_13.exe.config
+C:\Users\Compumar\Desktop\Programacion_Laboratorio_2\Pantano.Nicolas\Ejercicio_13\bin\Debug\Ejercicio_13.exe
+C:\Users\Compumar\Desktop\Programacion_Laboratorio_2\Pantano.Nicolas\Ejercicio_13\bin\Debug\Ejercicio_13.pdb
+C:\Users\Compumar\Desktop\Programacion_Laboratorio_2\Pantano.Nicolas\Ejercicio_13\obj\Debug\Ejercicio_13.csprojResolveAssemblyReference.cache
+C:\Users\Compumar\Desktop\Programacion_Laboratorio_2\Pantano.Nicolas\Ejercicio_13\obj\Debug\Ejercicio_13.csproj.CoreCompileInputs.cache
+C:\Users\Compumar\Desktop\Programacion_Laboratorio_2\Pantano.Nicolas\Ejercicio_13\obj\Debug\Ejercicio_13.exe
+C:\Users\Compumar\Desktop\Programacion_Laboratorio_2\Pantano.Nicolas\Ejercicio_13\obj\Debug\Ejercicio_13.pdb
