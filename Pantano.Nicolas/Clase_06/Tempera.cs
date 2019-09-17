@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Clase_06
 {
-    class Tempera
+    public class Tempera
     {
         private ConsoleColor color;
         private string marca;

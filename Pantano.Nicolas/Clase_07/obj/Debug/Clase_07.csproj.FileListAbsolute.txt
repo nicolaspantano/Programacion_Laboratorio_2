@@ -1,0 +1,14 @@
+C:\Users\Compumar\Desktop\Programacion_Laboratorio_2\Pantano.Nicolas\Clase_07\bin\Debug\Clase_07.exe.config
+C:\Users\Compumar\Desktop\Programacion_Laboratorio_2\Pantano.Nicolas\Clase_07\bin\Debug\Clase_07.exe
+C:\Users\Compumar\Desktop\Programacion_Laboratorio_2\Pantano.Nicolas\Clase_07\bin\Debug\Clase_07.pdb
+C:\Users\Compumar\Desktop\Programacion_Laboratorio_2\Pantano.Nicolas\Clase_07\bin\Debug\Clase_06.exe
+C:\Users\Compumar\Desktop\Programacion_Laboratorio_2\Pantano.Nicolas\Clase_07\bin\Debug\Clase_06.pdb
+C:\Users\Compumar\Desktop\Programacion_Laboratorio_2\Pantano.Nicolas\Clase_07\bin\Debug\Clase_06.exe.config
+C:\Users\Compumar\Desktop\Programacion_Laboratorio_2\Pantano.Nicolas\Clase_07\obj\Debug\Clase_07.csprojResolveAssemblyReference.cache
+C:\Users\Compumar\Desktop\Programacion_Laboratorio_2\Pantano.Nicolas\Clase_07\obj\Debug\Clase_07.MenuPrincipal.resources
+C:\Users\Compumar\Desktop\Programacion_Laboratorio_2\Pantano.Nicolas\Clase_07\obj\Debug\Clase_07.MenuTempera.resources
+C:\Users\Compumar\Desktop\Programacion_Laboratorio_2\Pantano.Nicolas\Clase_07\obj\Debug\Clase_07.Properties.Resources.resources
+C:\Users\Compumar\Desktop\Programacion_Laboratorio_2\Pantano.Nicolas\Clase_07\obj\Debug\Clase_07.csproj.GenerateResource.Cache
+C:\Users\Compumar\Desktop\Programacion_Laboratorio_2\Pantano.Nicolas\Clase_07\obj\Debug\Clase_07.csproj.CoreCompileInputs.cache
+C:\Users\Compumar\Desktop\Programacion_Laboratorio_2\Pantano.Nicolas\Clase_07\obj\Debug\Clase_07.exe
+C:\Users\Compumar\Desktop\Programacion_Laboratorio_2\Pantano.Nicolas\Clase_07\obj\Debug\Clase_07.pdb
