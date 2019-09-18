@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Clase_10.Entidades;
 
 namespace Clase_10.WindowsForm
 {
@@ -19,9 +20,23 @@ namespace Clase_10.WindowsForm
             {
                 this.cmbTipoExamen.Items.Add(a);
             }
-            this.cmbTipoExamen.SelectedItem = ETipoExamen.Primero;
+            this.cmbTipoExamen.SelectedItem = ETipoExamen.Final;
         }
 
-        
+        public Alumno Alumno
+        {
+            get {
+                return new Alumno(txtNombre.Text, txtApellido.Text, int.Parse(txtLegajo.Text),(ETipoExamen)this.cmbTipoExamen.SelectedIndex);
+                }
+        }
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnAceptar_Click(object sender, EventArgs e)
+        {
+            
+        }
     }
 }

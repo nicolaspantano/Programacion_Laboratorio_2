@@ -36,6 +36,8 @@
             this.txtApellido = new System.Windows.Forms.TextBox();
             this.txtLegajo = new System.Windows.Forms.TextBox();
             this.cmbTipoExamen = new System.Windows.Forms.ComboBox();
+            this.btnAceptar = new System.Windows.Forms.Button();
+            this.btnCancelar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -104,11 +106,33 @@
             this.cmbTipoExamen.Size = new System.Drawing.Size(168, 21);
             this.cmbTipoExamen.TabIndex = 7;
             // 
+            // btnAceptar
+            // 
+            this.btnAceptar.Location = new System.Drawing.Point(12, 240);
+            this.btnAceptar.Name = "btnAceptar";
+            this.btnAceptar.Size = new System.Drawing.Size(75, 24);
+            this.btnAceptar.TabIndex = 8;
+            this.btnAceptar.Text = "Aceptar";
+            this.btnAceptar.UseVisualStyleBackColor = true;
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.Location = new System.Drawing.Point(105, 240);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(75, 24);
+            this.btnCancelar.TabIndex = 9;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            // 
             // FrmAlumno
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(192, 289);
+            this.Controls.Add(this.btnCancelar);
+            this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.cmbTipoExamen);
             this.Controls.Add(this.txtLegajo);
             this.Controls.Add(this.txtApellido);
@@ -119,7 +143,6 @@
             this.Controls.Add(this.label1);
             this.Name = "FrmAlumno";
             this.Text = "FrmAlumno";
-            
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -135,5 +158,7 @@
         private System.Windows.Forms.TextBox txtApellido;
         private System.Windows.Forms.TextBox txtLegajo;
         private System.Windows.Forms.ComboBox cmbTipoExamen;
+        private System.Windows.Forms.Button btnAceptar;
+        private System.Windows.Forms.Button btnCancelar;
     }
 }

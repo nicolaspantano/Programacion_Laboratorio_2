@@ -36,5 +36,10 @@ namespace Clase_10.WindowsForm
             FrmAlumno frmAlumno = new FrmAlumno();
             frmAlumno.ShowDialog();
         }
+
+        private void ActualizarListadoAlumno()
+        {
+            
+        }
     }
 }
