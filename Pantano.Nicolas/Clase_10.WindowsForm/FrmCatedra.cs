@@ -77,8 +77,8 @@ namespace Clase_10.WindowsForm
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-            FrmAlumno frmAlumno = new FrmAlumno();
-            frmAlumno.Alumno = this.catedra.Alumnos[this.lstAlumnos.SelectedIndex];
+            FrmAlumno frmAlumno = new FrmAlumno(this.catedra.Alumnos[this.lstAlumnos.SelectedIndex]);
+            
             frmAlumno.ShowDialog();
 
             if (frmAlumno.DialogResult == DialogResult.OK)
@@ -93,24 +93,28 @@ namespace Clase_10.WindowsForm
         private void btnCalificar_Click(object sender, EventArgs e)
         {
             bool check;
-            FrmAlumnoCalificado frmCalificado = new FrmAlumnoCalificado();
-            //frmCalificado.Alumno = this.catedra.Alumnos[this.lstAlumnos.SelectedIndex];
+            FrmAlumnoCalificado frmCalificado = new FrmAlumnoCalificado(this.catedra.Alumnos[this.lstAlumnos.SelectedIndex]);
+            
             frmCalificado.ShowDialog();
 
             if (frmCalificado.DialogResult == DialogResult.OK)
             {
-                this.lista.Add(frmCalificado.Alumno);
-                check= this.catedra - frmCalificado.Alumno;
+                this.lista.Add(frmCalificado.AlumnoCalificado);
+                check= this.catedra - this.catedra.Alumnos[this.lstAlumnos.SelectedIndex];
+                ActualizarListadoAlumno();
+                ActualizarListadoAlumnosCalificados();
                 
             }
         }
 
-        private void ActualizarListadoAlumnosModificados()
+        
+
+        private void ActualizarListadoAlumnosCalificados()
         {
             this.lstCalificados.Items.Clear();
             foreach(AlumnoCalificado actual in this.lista)
             {
-                this.lstCalificados.Items.Add(actual);
+                this.lstCalificados.Items.Add(actual.Mostrar());
             }
         }
     }

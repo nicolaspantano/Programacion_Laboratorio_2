@@ -14,31 +14,29 @@ namespace Clase_10.WindowsForm
     public partial class FrmAlumnoCalificado : FrmAlumno
     {
 
+        
         public FrmAlumnoCalificado()
         {
             InitializeComponent();
 
         }
-
-        public AlumnoCalificado Alumno
+        public FrmAlumnoCalificado(Alumno miAlumno) : base(miAlumno)
         {
-            set
-            {
-                this.txtNombre.Text = value.Nombre;
-                this.txtApellido.Text = value.Apellido;
-                this.txtLegajo.Text = value.Legajo.ToString();
-                this.cmbTipoExamen.SelectedItem = value.Examen;
+            InitializeComponent();
+            this.txtApellido.Enabled = false;
+            this.txtNombre.Enabled = false;
+            this.cmbTipoExamen.Enabled = false;
+            
+        }
 
-                this.txtNombre.Enabled = false;
-                this.txtApellido.Enabled = false;
-                this.txtLegajo.Enabled = false;
-                this.cmbTipoExamen.Enabled = false;
-            }
-
+        public AlumnoCalificado AlumnoCalificado
+        {       
             get
             {
-                return new AlumnoCalificado(this.txtNombre.Text, this.txtApellido.Text, Convert.ToInt32(this.txtLegajo.Text), (ETipoExamen)this.cmbTipoExamen.SelectedItem, Convert.ToInt32(this.txtNota.Text));
+                return new AlumnoCalificado(this.txtNombre.Text, this.txtApellido.Text, Convert.ToInt32(this.txtLegajo.Text), (ETipoExamen)this.cmbTipoExamen.SelectedItem, Convert.ToDouble(this.txtNota.Text));
             }
         }
+
+        
     }
 }

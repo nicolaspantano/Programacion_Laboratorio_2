@@ -57,6 +57,10 @@
             this.Controls.Add(this.txtNota);
             this.Name = "FrmAlumnoCalificado";
             this.Text = "FrmAlumnoCalificado";
+            this.Controls.SetChildIndex(this.txtNombre, 0);
+            this.Controls.SetChildIndex(this.txtApellido, 0);
+            this.Controls.SetChildIndex(this.txtLegajo, 0);
+            this.Controls.SetChildIndex(this.cmbTipoExamen, 0);
             this.Controls.SetChildIndex(this.txtNota, 0);
             this.Controls.SetChildIndex(this.label5, 0);
             this.ResumeLayout(false);
