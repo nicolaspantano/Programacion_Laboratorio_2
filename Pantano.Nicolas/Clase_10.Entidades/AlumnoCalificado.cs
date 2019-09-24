@@ -22,5 +22,10 @@ namespace Clase_10.Entidades
         {
             return Alumno.Mostrar(this) + " - " + this.Nota.ToString();
         }
+
+        public override string ToString()
+        {
+            return AlumnoCalificado.Mostrar(this);
+        }
     }
 }

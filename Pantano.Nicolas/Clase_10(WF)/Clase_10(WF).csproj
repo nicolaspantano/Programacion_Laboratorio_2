@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{D56854EC-7425-420A-AD17-F812964F1980}</ProjectGuid>
+    <ProjectGuid>{47AD2723-CA5B-4DB5-96C1-A0FABB4EA32D}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>Clase_10.WindowsForm</RootNamespace>
-    <AssemblyName>Clase_10.WindowsForm</AssemblyName>
+    <RootNamespace>Clase_10_WF_</RootNamespace>
+    <AssemblyName>Clase_10%28WF%29</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -31,9 +31,6 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
-  <PropertyGroup>
-    <StartupObject>Clase_10.WindowsForm.Program</StartupObject>
-  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -48,43 +45,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FrmAlumno.cs">
+    <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmAlumno.Designer.cs">
-      <DependentUpon>FrmAlumno.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FrmAlumnoCalificado.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmAlumnoCalificado.Designer.cs">
-      <DependentUpon>FrmAlumnoCalificado.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FrmCatedra.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmCatedra.Designer.cs">
-      <DependentUpon>FrmCatedra.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FrmPrincipal.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmPrincipal.Designer.cs">
-      <DependentUpon>FrmPrincipal.cs</DependentUpon>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="FrmAlumno.resx">
-      <DependentUpon>FrmAlumno.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FrmAlumnoCalificado.resx">
-      <DependentUpon>FrmAlumnoCalificado.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FrmCatedra.resx">
-      <DependentUpon>FrmCatedra.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmPrincipal.resx">
-      <DependentUpon>FrmPrincipal.cs</DependentUpon>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -110,3 +110,4 @@ C:\Users\alumno\Desktop\Programacion_Laboratorio_2\Pantano.Nicolas\Clase_10.Wind
 C:\Users\alumno\Desktop\Programacion_Laboratorio_2\Pantano.Nicolas\Clase_10.WindowsForm\obj\Debug\Clase_10.WindowsForm.FrmCatedra.resources
 C:\Users\alumno\Desktop\Programacion_Laboratorio_2\Pantano.Nicolas\Clase_10.WindowsForm\obj\Debug\Clase_10.WindowsForm.csproj.CopyComplete
 C:\Users\alumno\Desktop\Programacion_Laboratorio_2\Pantano.Nicolas\Clase_10.WindowsForm\obj\Debug\Clase_10.WindowsForm.FrmAlumno.resources
+C:\Users\alumno\Desktop\Programacion_Laboratorio_2\Pantano.Nicolas\Clase_10.WindowsForm\obj\Debug\Clase_10.WindowsForm.FrmAlumnoCalificado.resources

@@ -53,5 +53,15 @@ namespace Clase_10.Entidades
             }
            
         }
+
+        public override string ToString()
+        {
+            string mensaje = "";
+            foreach(Alumno actual in this.alumnos)
+            {
+                mensaje += actual.ToString();
+            }
+            return mensaje;
+        }
     }
 }
