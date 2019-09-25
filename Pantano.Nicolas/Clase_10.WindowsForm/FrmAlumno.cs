@@ -35,7 +35,7 @@ namespace Clase_10.WindowsForm
         public Alumno Alumno
         {
             get {
-                return new Alumno(txtNombre.Text, txtApellido.Text, Convert.ToInt32(txtLegajo.Text),(ETipoExamen)this.cmbTipoExamen.SelectedIndex);
+                return new Alumno(this.txtNombre.Text, this.txtApellido.Text, Convert.ToInt32(this.txtLegajo.Text),(ETipoExamen)this.cmbTipoExamen.SelectedIndex);
                 }
            
         }
@@ -44,9 +44,17 @@ namespace Clase_10.WindowsForm
             this.Close();
         }
 
-        private void btnAceptar_Click(object sender, EventArgs e)
+        protected virtual void btnAceptar_Click(object sender, EventArgs e)
         {
-            this.DialogResult = DialogResult.OK;
+            if(this.txtApellido.Text!=""&&this.txtNombre.Text!=""&&this.txtLegajo.Text!="")
+            {
+                this.DialogResult = DialogResult.OK;
+            }
+            else
+            {
+                MessageBox.Show("Faltan datos");
+            }
+            
         }
     }
 }

@@ -37,6 +37,17 @@ namespace Clase_10.WindowsForm
             }
         }
 
-        
+        protected override void btnAceptar_Click(object sender, EventArgs e)
+        {
+            if (this.txtNota.Text != "")
+            {
+                base.btnAceptar_Click(sender, e);
+            }
+            else
+            {
+                MessageBox.Show("Faltan datos");
+            }
+            
+        }
     }
 }

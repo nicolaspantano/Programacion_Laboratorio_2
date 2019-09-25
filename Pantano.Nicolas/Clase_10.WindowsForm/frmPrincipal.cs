@@ -30,5 +30,7 @@ namespace Clase_10.WindowsForm
             formCatedra.ShowDialog();
             
         }
+
+        
     }
 }

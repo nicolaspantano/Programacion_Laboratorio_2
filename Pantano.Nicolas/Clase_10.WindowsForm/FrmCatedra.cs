@@ -77,34 +77,40 @@ namespace Clase_10.WindowsForm
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-            FrmAlumno frmAlumno = new FrmAlumno(this.catedra.Alumnos[this.lstAlumnos.SelectedIndex]);
-            
-            frmAlumno.ShowDialog();
-
-            if (frmAlumno.DialogResult == DialogResult.OK)
+            if (this.lstAlumnos.SelectedIndex != -1)
             {
-                catedra.Alumnos[this.lstAlumnos.SelectedIndex] = frmAlumno.Alumno;
-                ActualizarListadoAlumno();
-            }
-            
-           
+                FrmAlumno frmAlumno = new FrmAlumno(this.catedra.Alumnos[this.lstAlumnos.SelectedIndex]);
+
+                frmAlumno.ShowDialog();
+
+                if (frmAlumno.DialogResult == DialogResult.OK)
+                {
+                    catedra.Alumnos[this.lstAlumnos.SelectedIndex] = frmAlumno.Alumno;
+                    ActualizarListadoAlumno();
+                }
+            }                                   
         }
        
         private void btnCalificar_Click(object sender, EventArgs e)
         {
             bool check;
-            FrmAlumnoCalificado frmCalificado = new FrmAlumnoCalificado(this.catedra.Alumnos[this.lstAlumnos.SelectedIndex]);
-            
-            frmCalificado.ShowDialog();
 
-            if (frmCalificado.DialogResult == DialogResult.OK)
+            if (this.lstAlumnos.SelectedIndex != -1)
             {
-                this.lista.Add(frmCalificado.AlumnoCalificado);
-                check= this.catedra - this.catedra.Alumnos[this.lstAlumnos.SelectedIndex];
-                ActualizarListadoAlumno();
-                ActualizarListadoAlumnosCalificados();
-                
+                FrmAlumnoCalificado frmCalificado = new FrmAlumnoCalificado(this.catedra.Alumnos[this.lstAlumnos.SelectedIndex]);
+
+                frmCalificado.ShowDialog();
+
+                if (frmCalificado.DialogResult == DialogResult.OK)
+                {
+                    this.lista.Add(frmCalificado.AlumnoCalificado);
+                    check = this.catedra - this.catedra.Alumnos[this.lstAlumnos.SelectedIndex];
+                    ActualizarListadoAlumno();
+                    ActualizarListadoAlumnosCalificados();
+
+                }
             }
+           
         }
 
         
