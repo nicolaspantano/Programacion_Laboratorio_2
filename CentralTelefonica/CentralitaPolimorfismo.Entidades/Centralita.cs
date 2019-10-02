@@ -38,17 +38,35 @@ namespace CentralitaPolimorfismo.Entidades
         /// <returns></returns>
         private float CalcularGanancia(TipoLLamada tipo)
         {
-            float retorno = 1;
+            float retorno = 0;
 
             switch (tipo)
             {
                 case TipoLLamada.Local:
+                    foreach(Llamada actual in this._listaDeLlamadas)
+                    {
+                        if(actual is Local)
+                        {
+                            retorno += actual.CostoLLamada;
+                        }
+                    }
                     break;
 
                 case TipoLLamada.Provincial:
+                    foreach (Llamada actual in this._listaDeLlamadas)
+                    {
+                        if (actual is Provincial)
+                        {
+                            retorno += actual.CostoLLamada;
+                        }
+                    }
                     break;
 
                 case TipoLLamada.Todas:
+                    foreach (Llamada actual in this._listaDeLlamadas)
+                    {                        
+                            retorno += actual.CostoLLamada;                       
+                    }
                     break;
             }
 
