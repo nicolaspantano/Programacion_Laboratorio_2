@@ -9,9 +9,9 @@ namespace CentralitaPolimorfismo.Entidades
         private List<Llamada> _listaDeLlamadas;
         protected string _razonSocial;
 
-        public float GananciaPorLocal { get { return 1; } }
-        public float GananciaPorProvincial { get { return 1; } }
-        public float GananciaTotal { get { return 1; } }
+        public float GananciaPorLocal { get { return CalcularGanancia(TipoLLamada.Local); } }
+        public float GananciaPorProvincial { get { return CalcularGanancia(TipoLLamada.Provincial); } }
+        public float GananciaTotal { get { return CalcularGanancia(TipoLLamada.Todas); } }
         public List<Llamada> Llamadas { get { return this._listaDeLlamadas; } }
 
         public Centralita()
@@ -55,9 +55,19 @@ namespace CentralitaPolimorfismo.Entidades
             return retorno;
         }
 
-        public void OrdenarLLamadas()
+        public void OrdenarLLamadas(int tipo)
         {
-            this._listaDeLlamadas.Sort(Llamada.OrdenarPorDuracion);
+            if(tipo==-1)
+            {
+                this._listaDeLlamadas.Sort(Llamada.OrdenarPorDuracionDesc);
+            }
+            else
+            {
+                this._listaDeLlamadas.Sort(Llamada.OrdenarPorDuracionAsc);
+            }
+
+            
+            
         }
 
         public static bool operator ==(Centralita central,Llamada nuevaLLamada)
