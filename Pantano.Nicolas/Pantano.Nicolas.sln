@@ -47,6 +47,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Clase_10.Entidades", "Clase
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Clase_10.WindowsForm", "Clase_10.WindowsForm\Clase_10.WindowsForm.csproj", "{D56854EC-7425-420A-AD17-F812964F1980}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Modelo.Entidades", "Modelo.Entidades\Modelo.Entidades.csproj", "{F1A8E66E-4919-47D3-9E92-F9D6203BD758}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Modelo.Test", "Modelo.Test\Modelo.Test.csproj", "{956919E9-13BC-4758-A1D2-3CEB169E3852}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -141,6 +145,14 @@ Global
 		{D56854EC-7425-420A-AD17-F812964F1980}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D56854EC-7425-420A-AD17-F812964F1980}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D56854EC-7425-420A-AD17-F812964F1980}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F1A8E66E-4919-47D3-9E92-F9D6203BD758}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F1A8E66E-4919-47D3-9E92-F9D6203BD758}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F1A8E66E-4919-47D3-9E92-F9D6203BD758}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F1A8E66E-4919-47D3-9E92-F9D6203BD758}.Release|Any CPU.Build.0 = Release|Any CPU
+		{956919E9-13BC-4758-A1D2-3CEB169E3852}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{956919E9-13BC-4758-A1D2-3CEB169E3852}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{956919E9-13BC-4758-A1D2-3CEB169E3852}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{956919E9-13BC-4758-A1D2-3CEB169E3852}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
