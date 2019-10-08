@@ -70,11 +70,11 @@ namespace Modelo.Entidades
         private string Mostrar()
         {
             StringBuilder sb=new StringBuilder();
-            sb.AppendLine("Materia: "+this.Nombre);
+            sb.AppendLine("\nMateria: "+this.Nombre);
             sb.Append('*', 39).AppendLine();
             sb.Append('*', 16);
             sb.Append("ALUMNOS");
-            sb.Append('*', 16).AppendLine();
+            sb.Append('*', 16).AppendLine().AppendLine();
 
             foreach(Alumno actual in this.Alumnos)
             {
@@ -125,8 +125,15 @@ namespace Modelo.Entidades
         {
             if (m != a)
             {
-                m.Alumnos.Add(a);                
+                m.Alumnos.Add(a);
+                Console.WriteLine("Se agrego el alumno a la materia: " + m.Nombre + "!!!");
             }
+            else
+            {
+                Console.WriteLine("El alumno ya esta en la materia: " + m.Nombre + "!!!");
+
+            }
+
             return m;
         }
 
@@ -135,6 +142,11 @@ namespace Modelo.Entidades
             if (m == a)
             {
                 m.Alumnos.Remove(a);
+                Console.WriteLine("Se quito el alumno de la materia: " + m.Nombre + "!!!");
+            }
+            else
+            {
+                Console.WriteLine("El alumno no esta en la materia :" + m.Nombre + "!!!");
             }
             return m;
         }

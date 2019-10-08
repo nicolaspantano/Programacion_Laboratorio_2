@@ -80,7 +80,7 @@ namespace Modelo.Entidades
         #region Metodos
         private string Mostrar()
         {
-            return this.Apellido + ", " + this.Nombre + " - Legajo: " + this.Legajo.ToString() + " - Nota: " + this.Nota.ToString(); 
+            return this.Apellido + ", " + this.Nombre + " - Legajo: " + this.Legajo.ToString() + " - Nota: " + this.Nota.ToString()+"\n"; 
         }
 
         public static string Mostrar(Alumno alumno)
