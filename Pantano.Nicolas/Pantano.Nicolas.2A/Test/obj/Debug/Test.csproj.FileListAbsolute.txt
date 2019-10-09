@@ -1,0 +1,10 @@
+D:\VisualStudio\Pantano.Nicolas\Pantano.Nicolas.2A\Test\bin\Debug\Test.exe.config
+D:\VisualStudio\Pantano.Nicolas\Pantano.Nicolas.2A\Test\bin\Debug\Test.exe
+D:\VisualStudio\Pantano.Nicolas\Pantano.Nicolas.2A\Test\bin\Debug\Test.pdb
+D:\VisualStudio\Pantano.Nicolas\Pantano.Nicolas.2A\Test\bin\Debug\Entidades.dll
+D:\VisualStudio\Pantano.Nicolas\Pantano.Nicolas.2A\Test\bin\Debug\Entidades.pdb
+D:\VisualStudio\Pantano.Nicolas\Pantano.Nicolas.2A\Test\obj\Debug\Test.csprojAssemblyReference.cache
+D:\VisualStudio\Pantano.Nicolas\Pantano.Nicolas.2A\Test\obj\Debug\Test.csproj.CoreCompileInputs.cache
+D:\VisualStudio\Pantano.Nicolas\Pantano.Nicolas.2A\Test\obj\Debug\Test.csproj.CopyComplete
+D:\VisualStudio\Pantano.Nicolas\Pantano.Nicolas.2A\Test\obj\Debug\Test.exe
+D:\VisualStudio\Pantano.Nicolas\Pantano.Nicolas.2A\Test\obj\Debug\Test.pdb
