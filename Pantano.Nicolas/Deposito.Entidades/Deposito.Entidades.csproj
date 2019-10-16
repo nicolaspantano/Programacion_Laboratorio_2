@@ -41,7 +41,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Auto.cs" />
+    <Compile Include="Cocina.cs" />
+    <Compile Include="Deposito.cs" />
     <Compile Include="DepositoDeAutos.cs" />
+    <Compile Include="DepositoDeCocinas.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
