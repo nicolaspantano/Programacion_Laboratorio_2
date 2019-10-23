@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Interfaces.Entidades
 {
-    public class Deportivo : Auto,IAFIP
+    public class Deportivo : Auto,IAFIP,IARBA
     {
         protected int _caballosFuerza;
 
@@ -19,6 +19,11 @@ namespace Interfaces.Entidades
         double IAFIP.CalcularImpuesto()
         {
             return this._precio * 0.28;
+        }
+
+        double IARBA.CalcularImpuesto()
+        {
+            return this._precio * 0.23;
         }
     }
 }

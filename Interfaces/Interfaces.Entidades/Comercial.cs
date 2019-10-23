@@ -15,5 +15,6 @@ namespace Interfaces.Entidades
         {
             this._capacidadPasajeros = pasajeros;
         }
+        
     }
 }

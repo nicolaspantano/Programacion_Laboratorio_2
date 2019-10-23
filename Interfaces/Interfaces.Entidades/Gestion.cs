@@ -12,5 +12,10 @@ namespace Interfaces.Entidades
         {
             return bienPunible.CalcularImpuesto();
         }
+
+        public static double MostrarImpuestoProvincial(IARBA bienPunible)
+        {
+            return bienPunible.CalcularImpuesto();
+        }
     }
 }
