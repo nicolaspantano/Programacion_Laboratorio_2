@@ -14,60 +14,19 @@ namespace Test
     {
         static void Main(string[] args)
         {
-            Persona p1 = new Persona("Juan", "Perez",50);
-            p1.Apodos.Add("a");
-            Console.WriteLine(p1.ToString());
-
-            try
-            {                
-                XmlSerializer a = new XmlSerializer(typeof(Persona));
-                //XmlTextWriter writer = new XmlTextWriter();
-                StreamWriter sw = new StreamWriter("Persona.xml");
-                a.Serialize(sw, p1);                
-                sw.Close();                
-            }
-            catch(Exception e)
-            {
-                Console.WriteLine(e.Message);
-            }
-
-            try
-            {
-                XmlSerializer serializer = new XmlSerializer(typeof(Persona));
-                StreamReader sr = new StreamReader("Persona.xml");
-                Persona prueba=(Persona)serializer.Deserialize(sr);
-                Console.WriteLine(prueba.ToString());
-            }
-            catch(Exception e)
-            {
-                Console.WriteLine(e.Message);
-            }
-
-
             List<Persona> lista = new List<Persona>();
-            lista.Add(p1);
+            lista.Add(new Persona());
+            lista.Add(new Persona());
+            lista.Add(new Empleado());
+            lista.Add(new Empleado());
+            lista.Add(new Alumno());
+            lista.Add(new Alumno());
 
-            Persona p2 = new Persona("Federico", "Gonzalez", 19);
-            p2.Apodos.Add("b");
-            Persona p3 = new Persona("Valentin", "Gomez", 16);
-            p3.Apodos.Add("c");
-        
-            lista.Add(p2);            
-            lista.Add(p3);
-
-            try
+            foreach(Persona a in lista)
             {
-                XmlSerializer serilaizer = new XmlSerializer(typeof(List<Persona>));
-                StreamWriter sw = new StreamWriter("Lista.xml");
-                serilaizer.Serialize(sw, lista);
-                sw.Close();
-            }
-            catch(Exception e)
-            {
-                Console.WriteLine(e.Message);
-            }
+                Serializadora.Serializar(a);
+            } 
 
-            
             Console.ReadKey();
         }
     }

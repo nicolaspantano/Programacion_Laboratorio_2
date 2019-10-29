@@ -10,13 +10,13 @@ namespace Clase._29._10
     {
         public static bool Serializar(IXML interfaz)
         {
-            return interfaz.Guardar(@"C:\Users\alumno\Desktop\");
+            return interfaz.Guardar(@"C:\Users\alumno\Desktop\Serializado.xml");
         }
 
         public static bool Deserializar(IXML interfaz,out object salida)
         {
             salida = null;
-            return interfaz.Leer(@"C:\Users\alumno\Desktop\", out salida);
+            return interfaz.Leer(@"C:\Users\alumno\Desktop\Serializado.xml", out salida);
         }
     }
 }
