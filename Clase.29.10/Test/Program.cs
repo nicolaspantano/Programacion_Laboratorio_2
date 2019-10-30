@@ -22,10 +22,17 @@ namespace Test
             lista.Add(new Alumno());
             lista.Add(new Alumno());
 
-            foreach(Persona a in lista)
+            try
             {
-                Serializadora.Serializar(a);
-            } 
+                XmlSerializer serializer = new XmlSerializer(typeof(List<Persona>));
+                StreamWriter sw = new StreamWriter(@"C:\Users\alumno\Desktop\Lista.xml");
+                serializer.Serialize(sw, lista);
+                sw.Close();
+            }
+            catch(Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
 
             Console.ReadKey();
         }
