@@ -101,7 +101,7 @@ namespace AdminPersonas
                 reader = comando.ExecuteReader();
                 while (reader.Read() != false)
                 {
-                    MessageBox.Show(reader["id"].ToString());
+                    MessageBox.Show(reader["id"].ToString()+reader["nombre"].ToString()+reader["apellido"].ToString());
                 }
                 reader.Close();
                 conexion.Close();
