@@ -17,6 +17,9 @@ namespace AdminPersonas
 {
     public partial class FrmPrincipal : Form
     {
+
+        System.Data.SqlClient.SqlConnection conexion;
+
         private List<Persona> lista;
 
         public FrmPrincipal()
@@ -27,9 +30,9 @@ namespace AdminPersonas
             this.WindowState = FormWindowState.Maximized;
 
             this.lista = new List<Persona>();
+            this.conexion = new System.Data.SqlClient.SqlConnection(Properties.Settings.Default.Conexion);
 
-           
-            
+
 
             //System.Data.SqlClient.sqñ
         }
@@ -70,14 +73,24 @@ namespace AdminPersonas
 
         private void visualizarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmVisorPersona frm = new frmVisorPersona(this.lista);
-            
+            try
+            {
+                frmVisorPersona frm = new frmVisorPersona(this.lista);
+                frm.StartPosition = FormStartPosition.CenterScreen;
+                this.lista = frm.Lista;
+                frm.Show();
+            }
+            catch(Exception f)
+            {
+                MessageBox.Show(f.Message);
+            }
 
-            frm.StartPosition = FormStartPosition.CenterScreen;                        
-            this.lista = frm.Lista;                        
+
+
+
+
             //implementar//
 
-            frm.Show();
         }
 
         private void salirToolStripMenuItem_Click(object sender, EventArgs e)
@@ -90,26 +103,49 @@ namespace AdminPersonas
         {
             try
             {
-                System.Data.SqlClient.SqlConnection conexion = new System.Data.SqlClient.SqlConnection(Properties.Settings.Default.Conexion);
+                
                 conexion.Open();
                 MessageBox.Show("Exito");
-                System.Data.SqlClient.SqlCommand comando = new System.Data.SqlClient.SqlCommand();
-                comando.Connection = conexion;
-                comando.CommandType = CommandType.Text;
-                comando.CommandText = "SELECT TOP 1000 [id],[nombre],[apellido],[edad]FROM[personas_bd].[dbo].[personas]";
-                System.Data.SqlClient.SqlDataReader reader;
-                reader = comando.ExecuteReader();
-                while (reader.Read() != false)
-                {
-                    MessageBox.Show(reader["id"].ToString()+reader["nombre"].ToString()+reader["apellido"].ToString());
-                }
-                reader.Close();
-                conexion.Close();
+                
             }
             catch (Exception f)
             {
                 MessageBox.Show(f.Message);
             }
         }
+
+        private void traerTodosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                System.Data.SqlClient.SqlCommand comando = new System.Data.SqlClient.SqlCommand();
+                comando.Connection = this.conexion;
+                comando.CommandType = CommandType.Text;
+                comando.CommandText = "SELECT TOP 1000 [id],[nombre],[apellido],[edad]FROM[personas_bd].[dbo].[personas]";
+                System.Data.SqlClient.SqlDataReader reader;
+                reader = comando.ExecuteReader();
+                while (reader.Read() != false)
+                {                    
+                    this.lista.Add(new Persona(reader["nombre"].ToString(), reader["apellido"].ToString(), Convert.ToInt16(reader["edad"])));                    
+                }
+                MessageBox.Show("Exito");
+                reader.Close();
+                conexion.Close();
+            }
+            catch(Exception f)
+            {
+                throw f;
+            }
+            
+        }
+
+        private void guardarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            
+            
+                
+        }
+
+        
     }
 }
