@@ -85,7 +85,7 @@ namespace AdminPersonas
                     id = this.GetId(frm.Persona);
                     System.Data.SqlClient.SqlCommand comando = new System.Data.SqlClient.SqlCommand();
                     comando.Connection = conexion;
-                    comando.CommandType = CommandType.Text;
+                    comando.CommandType = CommandType.Text;                    
                     comando.CommandText = "Update Personas set nombre='" + frm.Persona.nombre + "',apellido='" + frm.Persona.apellido + "',edad=" + frm.Persona.edad + "where id="+id;
                     comando.ExecuteNonQuery();
                     conexion.Close();
@@ -121,6 +121,7 @@ namespace AdminPersonas
 
         private int GetId(Persona p1)
         {
+            int id=-1;
             System.Data.SqlClient.SqlCommand comando = new System.Data.SqlClient.SqlCommand();
             comando.Connection = this.conexion;
             comando.CommandType = CommandType.Text;
@@ -131,11 +132,14 @@ namespace AdminPersonas
             {
                 if (reader["nombre"].ToString() == p1.nombre && reader["apellido"].ToString() == p1.apellido && Convert.ToInt16(reader["edad"]) == p1.edad)
                 {
-                    return Convert.ToInt16(reader["id"]);
+                    
+                    id= Convert.ToInt16(reader["id"]);
                 }
                    
             }
-            return -1;
+            reader.Close();
+            return id;
+            
         }
 
        
