@@ -70,6 +70,8 @@ namespace AdminPersonas
         private void btnModificar_Click(object sender, EventArgs e)
         {
             frmPersona frm = new frmPersona(this.listaVisor[this.lstVisor.SelectedIndex]);
+            int id;
+            id = this.GetId(frm.Persona);
             frm.StartPosition = FormStartPosition.CenterScreen;
             frm.ShowDialog();
             if (frm.DialogResult == DialogResult.OK)
@@ -80,9 +82,8 @@ namespace AdminPersonas
 
                 try
                 {
-                    int id;
-                    conexion.Open();
-                    id = this.GetId(frm.Persona);
+                    
+                    conexion.Open();                    
                     System.Data.SqlClient.SqlCommand comando = new System.Data.SqlClient.SqlCommand();
                     comando.Connection = conexion;
                     comando.CommandType = CommandType.Text;                    
@@ -121,12 +122,13 @@ namespace AdminPersonas
 
         private int GetId(Persona p1)
         {
+            this.conexion.Open();
             int id=-1;
             System.Data.SqlClient.SqlCommand comando = new System.Data.SqlClient.SqlCommand();
             comando.Connection = this.conexion;
             comando.CommandType = CommandType.Text;
             comando.CommandText = "SELECT TOP 1000 [id],[nombre],[apellido],[edad]FROM[personas_bd].[dbo].[personas]";
-            System.Data.SqlClient.SqlDataReader reader;
+            System.Data.SqlClient.SqlDataReader reader;            
             reader = comando.ExecuteReader();
             while (reader.Read() != false)
             {
@@ -138,6 +140,7 @@ namespace AdminPersonas
                    
             }
             reader.Close();
+            this.conexion.Close();
             return id;
             
         }

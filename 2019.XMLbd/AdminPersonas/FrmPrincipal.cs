@@ -118,6 +118,7 @@ namespace AdminPersonas
         {
             try
             {
+                this.conexion.Open();
                 System.Data.SqlClient.SqlCommand comando = new System.Data.SqlClient.SqlCommand();
                 comando.Connection = this.conexion;
                 comando.CommandType = CommandType.Text;
