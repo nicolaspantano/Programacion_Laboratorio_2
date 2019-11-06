@@ -8,13 +8,25 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace AdminPersonas
 {
-    public partial class frmVisorDataTable : Form
+    public partial class frmVisorDataTable : frmVisorPersona
     {
-        public frmVisorDataTable()
+        DataTable table;
+        public frmVisorDataTable(DataTable table)
         {
             InitializeComponent();
+            this.table = table;
+            
+            /*foreach (this.table.Rows)
+            {
+                
+            }*/
         }
+
+        public DataTable Table { get {return this.table; } }
     }
+
+
 }

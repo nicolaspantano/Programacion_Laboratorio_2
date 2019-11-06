@@ -14,13 +14,12 @@ namespace AdminPersonas
     public partial class frmVisorPersona : Form
     {
         System.Data.SqlClient.SqlConnection conexion;
-        DataTable table;
         private List<Persona> listaVisor;
         public frmVisorPersona()
         {
             InitializeComponent();
             this.conexion = new System.Data.SqlClient.SqlConnection(Properties.Settings.Default.Conexion);
-            this.table = new DataTable();
+            
         }
 
         public frmVisorPersona(List<Persona> l) : this()
