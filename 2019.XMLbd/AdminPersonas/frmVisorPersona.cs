@@ -8,18 +8,19 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Entidades;
+using System.Data.SqlClient;
 namespace AdminPersonas
 {
     public partial class frmVisorPersona : Form
     {
         System.Data.SqlClient.SqlConnection conexion;
-
+        DataTable table;
         private List<Persona> listaVisor;
         public frmVisorPersona()
         {
             InitializeComponent();
             this.conexion = new System.Data.SqlClient.SqlConnection(Properties.Settings.Default.Conexion);
-
+            this.table = new DataTable();
         }
 
         public frmVisorPersona(List<Persona> l) : this()
@@ -105,7 +106,33 @@ namespace AdminPersonas
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            this.listaVisor.Remove(this.listaVisor[this.lstVisor.SelectedIndex]);
+                                                           
+            if(this.lstVisor.SelectedIndex != -1)
+            {
+                frmPersona frm = new frmPersona(this.listaVisor[this.lstVisor.SelectedIndex]);
+                int id = this.GetId(frm.Persona);
+                try
+                {
+                    this.Lista.RemoveAt(this.lstVisor.SelectedIndex);
+                    System.Data.SqlClient.SqlCommand command = new System.Data.SqlClient.SqlCommand();
+                    this.conexion.Open();
+                    command.Connection = this.conexion;
+                    command.CommandType = CommandType.Text;
+                    command.CommandText = "delete from Personas where id = " + id;
+                    command.ExecuteNonQuery();
+                    this.conexion.Close();
+                    this.ActualizarLista();                                        
+                }
+                catch(Exception f)
+                {
+                    MessageBox.Show(f.Message);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Seleccione una persona de la lista");
+            }
+
             this.ActualizarLista();
             
             //implementar
