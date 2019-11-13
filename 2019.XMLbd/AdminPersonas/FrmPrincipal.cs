@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 using System.Xml.Serialization;
-
+using System.Threading;
 
 using Entidades;
 using System.Data.SqlClient;
@@ -28,6 +28,9 @@ namespace AdminPersonas
         {
             InitializeComponent();
 
+            /*Thread hilo = new Thread(this.CargarDataTable);
+            hilo.Start();
+            hilo.Abort();*/
             this.IsMdiContainer = true;
             this.WindowState = FormWindowState.Maximized;
             this.tablaPersonas = new DataTable("Personas");
