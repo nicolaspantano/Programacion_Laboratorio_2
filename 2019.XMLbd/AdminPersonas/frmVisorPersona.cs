@@ -18,7 +18,7 @@ namespace AdminPersonas
         public frmVisorPersona()
         {
             InitializeComponent();
-            this.conexion = new System.Data.SqlClient.SqlConnection(Properties.Settings.Default.Conexion);
+            this.conexion = new System.Data.SqlClient.SqlConnection(Properties.Settings.Default.Conexion);            
             
         }
 
@@ -36,7 +36,7 @@ namespace AdminPersonas
             
         
 
-        private void btnAgregar_Click(object sender, EventArgs e)
+        protected virtual void btnAgregar_Click(object sender, EventArgs e)
         {
             frmPersona frm = new frmPersona();
             frm.StartPosition = FormStartPosition.CenterScreen;
@@ -67,7 +67,7 @@ namespace AdminPersonas
 
         }
 
-        private void btnModificar_Click(object sender, EventArgs e)
+        protected virtual void btnModificar_Click(object sender, EventArgs e)
         {
             frmPersona frm = new frmPersona(this.listaVisor[this.lstVisor.SelectedIndex]);
             int id;
@@ -95,7 +95,10 @@ namespace AdminPersonas
                 {
                     throw f;
                 }
+                this.btnModificar.Click -= new EventHandler(this.btnModificar_Click);
+
                 this.ActualizarLista();
+
             }
 
 
@@ -103,11 +106,10 @@ namespace AdminPersonas
             //implementar//
         }
 
-        private void btnEliminar_Click(object sender, EventArgs e)
+        protected virtual void btnEliminar_Click(object sender, EventArgs e)
         {
                                                            
-            if(this.lstVisor.SelectedIndex != -1)
-            {
+           
                 frmPersona frm = new frmPersona(this.listaVisor[this.lstVisor.SelectedIndex]);
                 int id = this.GetId(frm.Persona);
                 try
@@ -125,19 +127,15 @@ namespace AdminPersonas
                 catch(Exception f)
                 {
                     MessageBox.Show(f.Message);
-                }
-            }
-            else
-            {
-                MessageBox.Show("Seleccione una persona de la lista");
-            }
+                }                                   
 
             this.ActualizarLista();
+            this.btnEliminar.Click -= new EventHandler(this.btnEliminar_Click);
             
             //implementar
         }
 
-        private void ActualizarLista()
+        protected virtual void ActualizarLista()
         {
             this.lstVisor.Items.Clear();
             foreach(Persona actual in listaVisor)
@@ -146,7 +144,7 @@ namespace AdminPersonas
             }
         }
 
-        private int GetId(Persona p1)
+        protected int GetId(Persona p1)
         {
             this.conexion.Open();
             int id=-1;
@@ -171,7 +169,18 @@ namespace AdminPersonas
             
         }
 
+        private void frmVisorPersona_Load(object sender, EventArgs e)
+        {
+            this.btnAgregar.Click += new EventHandler(this.btnAgregar_Click);
+        }
+
+        private void lstVisor_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            this.btnModificar.Click += new EventHandler(this.btnModificar_Click);
+            this.btnEliminar.Click += new EventHandler(this.btnEliminar_Click);
+
+        }
+
        
-        
     }
 }

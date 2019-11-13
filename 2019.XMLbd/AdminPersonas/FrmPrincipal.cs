@@ -12,6 +12,7 @@ using System.Xml.Serialization;
 
 
 using Entidades;
+using System.Data.SqlClient;
 
 namespace AdminPersonas
 {
@@ -19,24 +20,67 @@ namespace AdminPersonas
     {
 
         System.Data.SqlClient.SqlConnection conexion;
-
+        private DataTable tablaPersonas;
         private List<Persona> lista;
-
+        private SqlDataAdapter adaptador;
+        private SqlCommand comando;
         public FrmPrincipal()
         {
             InitializeComponent();
 
             this.IsMdiContainer = true;
             this.WindowState = FormWindowState.Maximized;
+            this.tablaPersonas = new DataTable("Personas");
+            //this.CargarDataTable();
 
-            this.lista = new List<Persona>();
             this.conexion = new System.Data.SqlClient.SqlConnection(Properties.Settings.Default.Conexion);
+
+            this.comando = new SqlCommand();
+            this.comando.Connection = this.conexion;
+            this.comando.CommandType = CommandType.Text;
+            this.comando.CommandText = "select * from personas";
+
+            this.adaptador = new SqlDataAdapter(this.comando.CommandText, this.conexion);
+            this.lista = new List<Persona>();
+
+            //Configurando adaptador
+            this.adaptador.Fill(this.tablaPersonas);//Carga lo que esta en memoria
+            this.adaptador.InsertCommand = new SqlCommand("insert into personas values (@p1, @p2, @p3)", this.conexion);
+            this.adaptador.UpdateCommand = new SqlCommand("update personas set nombre = @p1, apellido = @p2, edad = @p3 where id = @p4", this.conexion);
+            this.adaptador.DeleteCommand = new SqlCommand("delete from personas whre id = @p1", this.conexion);
+
+            //Configurando parametros de cada comando
+            this.adaptador.InsertCommand.Parameters.Add("@p1", SqlDbType.VarChar, 50, "nombre");
+            this.adaptador.InsertCommand.Parameters.Add("@p2", SqlDbType.VarChar, 50, "apellido");
+            this.adaptador.InsertCommand.Parameters.Add("@p3", SqlDbType.Int, 10, "edad");
+
+            this.adaptador.UpdateCommand.Parameters.Add("@p1", SqlDbType.VarChar, 50, "nombre");
+            this.adaptador.UpdateCommand.Parameters.Add("@p2", SqlDbType.VarChar, 50, "apellido");
+            this.adaptador.UpdateCommand.Parameters.Add("@p3", SqlDbType.Int, 10, "edad");
+            this.adaptador.UpdateCommand.Parameters.Add("@p4", SqlDbType.Int, 10, "id");
+
+            this.adaptador.DeleteCommand.Parameters.Add("@p1", SqlDbType.Int, 10, "id");
 
 
 
             //System.Data.SqlClient.sqñ
         }
 
+        private void CargarDataTable()
+        {
+            this.conexion.Open();
+
+            this.comando.Connection = this.conexion;
+            this.comando.CommandType = CommandType.Text;
+            this.comando.CommandText = "select * from personas";
+
+            SqlDataReader reader = this.comando.ExecuteReader();
+
+            this.tablaPersonas.Load(reader);
+
+            this.conexion.Close();
+            
+        }
         private void cargarArchivoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             try
@@ -135,7 +179,7 @@ namespace AdminPersonas
             }
             catch(Exception f)
             {
-                throw f;
+                MessageBox.Show(f.Message);
             }
             
         }
@@ -147,6 +191,28 @@ namespace AdminPersonas
                 
         }
 
-        
+        private void visualizarDataTableToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmVisorDataTable frmMiDataTable = new frmVisorDataTable(this.tablaPersonas);
+            frmMiDataTable.StartPosition = FormStartPosition.CenterScreen;
+            frmMiDataTable.ShowDialog();
+            if (frmMiDataTable.DialogResult == DialogResult.OK)
+            {
+                this.adaptador.Update(frmMiDataTable.Table);
+            }
+        }
+
+        private void sincronizarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.adaptador.Update(this.tablaPersonas);
+                MessageBox.Show("Pudo sincronizarse el adaptador", "Exito");
+            }
+            catch(Exception error)
+            {
+                MessageBox.Show(error.Message);
+            }
+        }
     }
 }

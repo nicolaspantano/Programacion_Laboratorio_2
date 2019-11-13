@@ -35,10 +35,12 @@
             this.visualizarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.conectarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
-            this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.traerTodosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.guardarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
+            this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
+            this.visualizarDataTableToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.sincronizarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -50,7 +52,9 @@
             this.salirToolStripMenuItem,
             this.conectarToolStripMenuItem,
             this.traerTodosToolStripMenuItem,
-            this.guardarToolStripMenuItem});
+            this.guardarToolStripMenuItem,
+            this.sincronizarToolStripMenuItem,
+            this.visualizarDataTableToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(800, 24);
@@ -69,14 +73,14 @@
             // cargarArchivoToolStripMenuItem
             // 
             this.cargarArchivoToolStripMenuItem.Name = "cargarArchivoToolStripMenuItem";
-            this.cargarArchivoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.cargarArchivoToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
             this.cargarArchivoToolStripMenuItem.Text = "Cargar archivo";
             this.cargarArchivoToolStripMenuItem.Click += new System.EventHandler(this.cargarArchivoToolStripMenuItem_Click);
             // 
             // guardarEnArchivoToolStripMenuItem
             // 
             this.guardarEnArchivoToolStripMenuItem.Name = "guardarEnArchivoToolStripMenuItem";
-            this.guardarEnArchivoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.guardarEnArchivoToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
             this.guardarEnArchivoToolStripMenuItem.Text = "Guardar en archivo";
             this.guardarEnArchivoToolStripMenuItem.Click += new System.EventHandler(this.guardarEnArchivoToolStripMenuItem_Click);
             // 
@@ -101,16 +105,6 @@
             this.conectarToolStripMenuItem.Text = "Conectar";
             this.conectarToolStripMenuItem.Click += new System.EventHandler(this.conectarToolStripMenuItem_Click);
             // 
-            // openFileDialog
-            // 
-            this.openFileDialog.FileName = "Lista.xml";
-            this.openFileDialog.InitialDirectory = "C:\\Users\\alumno\\Desktop\\";
-            // 
-            // saveFileDialog
-            // 
-            this.saveFileDialog.CreatePrompt = true;
-            this.saveFileDialog.FileName = "Lista.xml";
-            // 
             // traerTodosToolStripMenuItem
             // 
             this.traerTodosToolStripMenuItem.Name = "traerTodosToolStripMenuItem";
@@ -123,6 +117,30 @@
             this.guardarToolStripMenuItem.Name = "guardarToolStripMenuItem";
             this.guardarToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
             this.guardarToolStripMenuItem.Text = "Guardar";
+            // 
+            // openFileDialog
+            // 
+            this.openFileDialog.FileName = "Lista.xml";
+            this.openFileDialog.InitialDirectory = "C:\\Users\\alumno\\Desktop\\";
+            // 
+            // saveFileDialog
+            // 
+            this.saveFileDialog.CreatePrompt = true;
+            this.saveFileDialog.FileName = "Lista.xml";
+            // 
+            // visualizarDataTableToolStripMenuItem
+            // 
+            this.visualizarDataTableToolStripMenuItem.Name = "visualizarDataTableToolStripMenuItem";
+            this.visualizarDataTableToolStripMenuItem.Size = new System.Drawing.Size(127, 20);
+            this.visualizarDataTableToolStripMenuItem.Text = "Visualizar Data Table";
+            this.visualizarDataTableToolStripMenuItem.Click += new System.EventHandler(this.visualizarDataTableToolStripMenuItem_Click);
+            // 
+            // sincronizarToolStripMenuItem
+            // 
+            this.sincronizarToolStripMenuItem.Name = "sincronizarToolStripMenuItem";
+            this.sincronizarToolStripMenuItem.Size = new System.Drawing.Size(77, 20);
+            this.sincronizarToolStripMenuItem.Text = "Sincronizar";
+            this.sincronizarToolStripMenuItem.Click += new System.EventHandler(this.sincronizarToolStripMenuItem_Click);
             // 
             // FrmPrincipal
             // 
@@ -153,6 +171,8 @@
         private System.Windows.Forms.ToolStripMenuItem conectarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem traerTodosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem guardarToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem visualizarDataTableToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem sincronizarToolStripMenuItem;
     }
 }
 

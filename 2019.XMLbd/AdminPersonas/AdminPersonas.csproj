@@ -77,6 +77,9 @@
     <EmbeddedResource Include="FrmPrincipal.resx">
       <DependentUpon>FrmPrincipal.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmVisorDataTable.resx">
+      <DependentUpon>frmVisorDataTable.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmVisorPersona.resx">
       <DependentUpon>frmVisorPersona.cs</DependentUpon>
     </EmbeddedResource>
